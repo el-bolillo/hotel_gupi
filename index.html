@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gupi Palace & Resort | Hotel de Ultra Lujo</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Floating Navigation Bar -->
+    <header class="navbar" id="main-navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo" id="nav-logo">
+                <span class="logo-accent">GUPI</span> PALACE
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active" data-view="home"><i class="fa-solid fa-hotel"></i> Inicio</a>
+                <a href="#rooms" class="nav-link" data-view="rooms"><i class="fa-solid fa-bed"></i> Habitaciones</a>
+                <a href="#amenities" class="nav-link" data-view="amenities"><i class="fa-solid fa-spa"></i> Servicios</a>
+                <a href="#booking" class="nav-link" data-view="booking"><i class="fa-solid fa-calendar-check"></i> Reservar</a>
+                <a href="#contact" class="nav-link" data-view="contact"><i class="fa-solid fa-envelope"></i> Contacto</a>
+                <a href="#entertainment" class="nav-link" data-view="entertainment"><i class="fa-solid fa-film"></i> Entretenimiento</a>
+                <a href="#admin" class="nav-link" data-view="admin"><i class="fa-solid fa-user-shield"></i> Admin</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="#booking" class="btn btn-gold btn-nav" id="btn-nav-book" data-view="booking">Reservar Ahora</a>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area with SPA Views -->
+    <main class="spa-content">
+
+        <!-- VIEW: HOME -->
+        <section id="home-view" class="view active">
+            <!-- Hero Banner -->
+            <div class="hero-banner" style="background-image: linear-gradient(rgba(11, 12, 16, 0.4), rgba(11, 12, 16, 0.85)), url('assets/hotel_exterior.png');">
+                <div class="hero-content">
+                    <span class="hero-subtitle">BIENVENIDO A LA GRANDEZA</span>
+                    <h1 class="hero-title animate-title">Gupi Palace & Resort</h1>
+                    <p class="hero-tagline">Un santuario de ultra-lujo y sofisticación, donde el mar infinito se encuentra con la grandeza arquitectónica.</p>
+                    <div class="hero-ctas">
+                        <button class="btn btn-gold btn-lg" onclick="app.switchView('rooms')">Descubrir Suites</button>
+                        <button class="btn btn-outline btn-lg" onclick="app.switchView('booking')">Hacer Reservación</button>
+                    </div>
+                </div>
+
+                <!-- Floating Booking Bar -->
+                <div class="quick-booking-bar">
+                    <div class="quick-input-group">
+                        <label for="quick-checkin"><i class="fa-solid fa-calendar-days"></i> Llegada</label>
+                        <input type="date" id="quick-checkin">
+                    </div>
+                    <div class="quick-input-group">
+                        <label for="quick-checkout"><i class="fa-solid fa-calendar-days"></i> Salida</label>
+                        <input type="date" id="quick-checkout">
+                    </div>
+                    <div class="quick-input-group">
+                        <label for="quick-guests"><i class="fa-solid fa-user-group"></i> Huéspedes</label>
+                        <select id="quick-guests">
+                            <option value="1">1 Adulto</option>
+                            <option value="2" selected>2 Adultos</option>
+                            <option value="3">3 Adultos</option>
+                            <option value="4">4 Adultos</option>
+                            <option value="luxury-group">Suite Presidencial (Grupo)</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-gold btn-quick-book" onclick="app.handleQuickBook()">Buscar</button>
+                </div>
+            </div>
+
+            <!-- Features Grid Section -->
+            <div class="section-container container">
+                <div class="section-header">
+                    <span class="section-subtitle">LA EXPERIENCIA GUPI</span>
+                    <h2 class="section-title">Un Palacio Diseñado a Escala Gigante</h2>
+                    <div class="accent-line"></div>
+                </div>
+
+                <div class="grid-features">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-building-columns"></i></div>
+                        <h3>Estructura Monumental</h3>
+                        <p>Tres torres majestuosas de 60 pisos, conectadas por un puente aéreo de cristal y más de 800 suites de gran lujo.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-utensils"></i></div>
+                        <h3>Gastronomía Estelar</h3>
+                        <p>12 restaurantes exclusivos, incluyendo 3 galardonados con estrellas Michelin, liderados por chefs internacionales de renombre.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-ship"></i></div>
+                        <h3>Marina & Club Privado</h3>
+                        <p>Puerto privado con yates exclusivos a disposición de nuestros huéspedes y helipuerto en la torre principal.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-infinity"></i></div>
+                        <h3>Piscina Elevada de 150m</h3>
+                        <p>La piscina infinita climatizada más grande del mundo, suspendida a 200 metros sobre el nivel del mar con vistas de 360 grados.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Showcase Promo Section -->
+            <div class="promo-section" style="background-image: linear-gradient(rgba(11, 12, 16, 0.8), rgba(11, 12, 16, 0.8)), url('assets/infinity_pool.png');">
+                <div class="container promo-content">
+                    <h2>Escape al Paraíso Absoluto</h2>
+                    <p>Sumerja sus sentidos en nuestro spa de clase mundial, nade en las nubes y disfrute del servicio de mayordomo privado las 24 horas del día. Cada rincón de Gupi Palace está pensado para redefinir el significado del lujo.</p>
+                    <button class="btn btn-gold" onclick="app.switchView('amenities')">Ver Todos los Servicios</button>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- VIEW: ROOMS -->
+        <section id="rooms-view" class="view">
+            <div class="section-container container">
+                <div class="section-header">
+                    <span class="section-subtitle">SANTUARIOS PRIVADOS</span>
+                    <h2 class="section-title">Habitaciones y Suites de Ensueño</h2>
+                    <div class="accent-line"></div>
+                </div>
+
+                <div class="filter-controls">
+                    <button class="filter-btn active" data-filter="all">Todas</button>
+                    <button class="filter-btn" data-filter="suite">Suites Exclusivas</button>
+                    <button class="filter-btn" data-filter="deluxe">Deluxe</button>
+                    <button class="filter-btn" data-filter="special">Experiencias Únicas</button>
+                </div>
+
+                <div class="grid-rooms" id="rooms-grid">
+                    <!-- Penthouse Suite (Suite) -->
+                    <div class="room-card" data-category="suite">
+                        <div class="room-image" style="background-image: url('assets/penthouse_suite.png');">
+                            <span class="room-badge">Más Popular</span>
+                        </div>
+                        <div class="room-details">
+                            <span class="room-category">Suite Exclusiva</span>
+                            <h3>Grand Penthouse Imperial</h3>
+                            <p class="room-desc">Ubicada en el piso más alto, con piscina de inmersión privada en la terraza, bar personal y vistas panorámicas inigualables.</p>
+                            <ul class="room-features-list">
+                                <li><i class="fa-solid fa-expand"></i> 240 m²</li>
+                                <li><i class="fa-solid fa-user-group"></i> Hasta 4 Huéspedes</li>
+                                <li><i class="fa-solid fa-bed"></i> 2 Camas King Size</li>
+                            </ul>
+                            <div class="room-footer">
+                                <div class="room-price">
+                                    <span class="price-amount">$1,200</span>
+                                    <span class="price-unit">/ Noche</span>
+                                </div>
+                                <div class="room-actions">
+                                    <button class="btn btn-outline btn-sm" onclick="app.openRoomDetail('penthouse')">Detalles</button>
+                                    <button class="btn btn-gold btn-sm" onclick="app.selectRoomForBooking('penthouse')">Reservar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ocean View Deluxe (Deluxe) -->
+                    <div class="room-card" data-category="deluxe">
+                        <div class="room-image" style="background-image: linear-gradient(rgba(11,12,16,0.1), rgba(11,12,16,0.4)), url('assets/infinity_pool.png');">
+                        </div>
+                        <div class="room-details">
+                            <span class="room-category">Deluxe</span>
+                            <h3>Grand Deluxe Vista al Océano</h3>
+                            <p class="room-desc">Habitación elegante y espaciosa con ventanales de piso a techo, balcón privado, tina de mármol y tecnología inteligente integrada.</p>
+                            <ul class="room-features-list">
+                                <li><i class="fa-solid fa-expand"></i> 85 m²</li>
+                                <li><i class="fa-solid fa-user-group"></i> Hasta 2 Huéspedes</li>
+                                <li><i class="fa-solid fa-bed"></i> 1 Cama King Size</li>
+                            </ul>
+                            <div class="room-footer">
+                                <div class="room-price">
+                                    <span class="price-amount">$450</span>
+                                    <span class="price-unit">/ Noche</span>
+                                </div>
+                                <div class="room-actions">
+                                    <button class="btn btn-outline btn-sm" onclick="app.openRoomDetail('ocean-deluxe')">Detalles</button>
+                                    <button class="btn btn-gold btn-sm" onclick="app.selectRoomForBooking('ocean-deluxe')">Reservar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Underwater Suite (Special) -->
+                    <div class="room-card" data-category="special">
+                        <div class="room-image" style="background-image: linear-gradient(rgba(11,12,16,0.2), rgba(11,12,16,0.5)), url('assets/hotel_exterior.png');">
+                            <span class="room-badge badge-special">Submarina</span>
+                        </div>
+                        <div class="room-details">
+                            <span class="room-category">Experiencia Única</span>
+                            <h3>Suite Submarina Poseidón</h3>
+                            <p class="room-desc">Duerma bajo el mar rodeado de la fascinante vida marina. Dormitorio sumergido a 10 metros de profundidad en una laguna privada.</p>
+                            <ul class="room-features-list">
+                                <li><i class="fa-solid fa-expand"></i> 150 m²</li>
+                                <li><i class="fa-solid fa-user-group"></i> Hasta 2 Huéspedes</li>
+                                <li><i class="fa-solid fa-bed"></i> 1 Cama King Size</li>
+                            </ul>
+                            <div class="room-footer">
+                                <div class="room-price">
+                                    <span class="price-amount">$2,500</span>
+                                    <span class="price-unit">/ Noche</span>
+                                </div>
+                                <div class="room-actions">
+                                    <button class="btn btn-outline btn-sm" onclick="app.openRoomDetail('underwater')">Detalles</button>
+                                    <button class="btn btn-gold btn-sm" onclick="app.selectRoomForBooking('underwater')">Reservar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Garden Villa (Deluxe) -->
+                    <div class="room-card" data-category="deluxe">
+                        <div class="room-image" style="background-image: linear-gradient(rgba(11,12,16,0.1), rgba(11,12,16,0.4)), url('assets/penthouse_suite.png');">
+                        </div>
+                        <div class="room-details">
+                            <span class="room-category">Deluxe</span>
+                            <h3>Villa Jardín & Oasis Privado</h3>
+                            <p class="room-desc">Ubicada en los jardines botánicos del hotel. Cuenta con patio interior, regadera tipo lluvia al aire libre y total privacidad.</p>
+                            <ul class="room-features-list">
+                                <li><i class="fa-solid fa-expand"></i> 110 m²</li>
+                                <li><i class="fa-solid fa-user-group"></i> Hasta 3 Huéspedes</li>
+                                <li><i class="fa-solid fa-bed"></i> 1 Cama King + 1 Sofá Cama</li>
+                            </ul>
+                            <div class="room-footer">
+                                <div class="room-price">
+                                    <span class="price-amount">$350</span>
+                                    <span class="price-unit">/ Noche</span>
+                                </div>
+                                <div class="room-actions">
+                                    <button class="btn btn-outline btn-sm" onclick="app.openRoomDetail('garden-villa')">Detalles</button>
+                                    <button class="btn btn-gold btn-sm" onclick="app.selectRoomForBooking('garden-villa')">Reservar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- VIEW: AMENITIES -->
+        <section id="amenities-view" class="view">
+            <div class="section-container container">
+                <div class="section-header">
+                    <span class="section-subtitle">AMENIDADES EXCLUSIVAS</span>
+                    <h2 class="section-title">Servicios que Desafían la Imaginación</h2>
+                    <div class="accent-line"></div>
+                </div>
+
+                <div class="grid-amenities">
+                    <div class="amenity-item" style="background-image: linear-gradient(rgba(11, 12, 16, 0.3), rgba(11, 12, 16, 0.9)), url('assets/infinity_pool.png');">
+                        <div class="amenity-content">
+                            <span class="amenity-number">01</span>
+                            <h3>Aurum Spa & Wellness</h3>
+                            <p>Tratamientos corporales con oro de 24 quilates, baño turco privado, sauna de sal del Himalaya y circuito hidrotermal personalizado.</p>
+                            <span class="amenity-badge">Incluido para Suites</span>
+                        </div>
+                    </div>
+
+                    <div class="amenity-item" style="background-image: linear-gradient(rgba(11, 12, 16, 0.3), rgba(11, 12, 16, 0.9)), url('assets/hotel_exterior.png');">
+                        <div class="amenity-content">
+                            <span class="amenity-number">02</span>
+                            <h3>Restaurante Zenith (3 Estrellas Michelin)</h3>
+                            <p>Ubicado en el piso 60 con vistas impresionantes. Cocina de fusión molecular liderada por el aclamado Chef Jean-Luc.</p>
+                            <span class="amenity-badge">Reservación Previa</span>
+                        </div>
+                    </div>
+
+                    <div class="amenity-item" style="background-image: linear-gradient(rgba(11, 12, 16, 0.3), rgba(11, 12, 16, 0.9)), url('assets/penthouse_suite.png');">
+                        <div class="amenity-content">
+                            <span class="amenity-number">03</span>
+                            <h3>Helipuerto SkyPort</h3>
+                            <p>Servicio exclusivo de traslado aéreo express desde el aeropuerto internacional directamente a la cima de nuestro hotel.</p>
+                            <span class="amenity-badge">Cargo Adicional</span>
+                        </div>
+                    </div>
+
+                    <div class="amenity-item" style="background-image: linear-gradient(rgba(11, 12, 16, 0.3), rgba(11, 12, 16, 0.9)), url('assets/infinity_pool.png');">
+                        <div class="amenity-content">
+                            <span class="amenity-number">04</span>
+                            <h3>Piscina Infinita SkyPool</h3>
+                            <p>Disfrute de camastros semisumergidos, DJ sets los fines de semana y cócteles artesanales a cargo de mixólogos expertos.</p>
+                            <span class="amenity-badge">Abierto 24/7</span>
+                        </div>
+                    </div>
+
+                    <div class="amenity-item" style="background-image: linear-gradient(rgba(11, 12, 16, 0.3), rgba(11, 12, 16, 0.9)), url('assets/hotel_exterior.png');">
+                        <div class="amenity-content">
+                            <span class="amenity-number">05</span>
+                            <h3>Club de Yates Gupi</h3>
+                            <p>Alquile veleros de regata o yates a motor de 50 pies equipados con tripulación profesional y chef a bordo para paseos privados.</p>
+                            <span class="amenity-badge">Cargo Adicional</span>
+                        </div>
+                    </div>
+
+                    <div class="amenity-item" style="background-image: linear-gradient(rgba(11, 12, 16, 0.3), rgba(11, 12, 16, 0.9)), url('assets/penthouse_suite.png');">
+                        <div class="amenity-content">
+                            <span class="amenity-number">06</span>
+                            <h3>Servicio de Mayordomo Real</h3>
+                            <p>Su mayordomo privado asignado se encargará del desempacado, reservaciones en la ciudad, planchado y cuidado personalizado.</p>
+                            <span class="amenity-badge">24 Horas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- VIEW: BOOKING (INTERACTIVE) -->
+        <section id="booking-view" class="view">
+            <div class="section-container container">
+                <div class="section-header">
+                    <span class="section-subtitle">RESERVE SU ESTANCIA</span>
+                    <h2 class="section-title">Motor de Reservas Interactivo</h2>
+                    <div class="accent-line"></div>
+                </div>
+
+                <div class="booking-layout">
+                    <!-- Reservation Form -->
+                    <div class="booking-form-card card-glass">
+                        <form id="hotel-booking-form" onsubmit="app.handleBookingSubmit(event)">
+                            <div class="form-step active" id="step-1">
+                                <div class="step-indicator">Paso 1 de 3: Selección de Habitación y Fechas</div>
+                                
+                                <div class="form-group">
+                                    <label for="book-room"><i class="fa-solid fa-bed"></i> Tipo de Habitación</label>
+                                    <select id="book-room" required onchange="app.updateBookingSummary()">
+                                        <option value="" disabled selected>Seleccione una habitación...</option>
+                                        <option value="penthouse" data-price="1200">Grand Penthouse Imperial ($1,200 / noche)</option>
+                                        <option value="ocean-deluxe" data-price="450">Grand Deluxe Vista al Océano ($450 / noche)</option>
+                                        <option value="underwater" data-price="2500">Suite Submarina Poseidón ($2,500 / noche)</option>
+                                        <option value="garden-villa" data-price="350">Villa Jardín & Oasis Privado ($350 / noche)</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-6">
+                                        <label for="book-checkin"><i class="fa-solid fa-calendar-check"></i> Fecha de Llegada</label>
+                                        <input type="date" id="book-checkin" required onchange="app.updateBookingSummary()">
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <label for="book-checkout"><i class="fa-solid fa-calendar-xmark"></i> Fecha de Salida</label>
+                                        <input type="date" id="book-checkout" required onchange="app.updateBookingSummary()">
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-6">
+                                        <label for="book-guests"><i class="fa-solid fa-user-large"></i> Adultos</label>
+                                        <select id="book-guests" onchange="app.updateBookingSummary()">
+                                            <option value="1">1 Persona</option>
+                                            <option value="2" selected>2 Personas</option>
+                                            <option value="3">3 Personas</option>
+                                            <option value="4">4 Personas</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <label for="book-kids"><i class="fa-solid fa-child"></i> Niños</label>
+                                        <select id="book-kids" onchange="app.updateBookingSummary()">
+                                            <option value="0" selected>Ninguno</option>
+                                            <option value="1">1 Niño</option>
+                                            <option value="2">2 Niños</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <button type="button" class="btn btn-gold btn-block" onclick="app.goToStep(2)">Continuar <i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+
+                            <div class="form-step" id="step-2">
+                                <div class="step-indicator">Paso 2 de 3: Servicios Adicionales (Opcional)</div>
+                                
+                                <p class="step-desc">Eleve su estancia a un nuevo nivel agregando nuestros servicios premium de hospitalidad.</p>
+
+                                <div class="addons-list">
+                                    <div class="addon-card">
+                                        <label class="addon-label">
+                                            <input type="checkbox" id="addon-heliport" data-price="600" onchange="app.updateBookingSummary()">
+                                            <div class="addon-info">
+                                                <span class="addon-title"><i class="fa-solid fa-helicopter"></i> Transfer de Helipuerto Express</span>
+                                                <span class="addon-detail">Traslado ida y vuelta desde el aeropuerto internacional ($600 de tarifa fija).</span>
+                                            </div>
+                                        </label>
+                                    </div>
+
+                                    <div class="addon-card">
+                                        <label class="addon-label">
+                                            <input type="checkbox" id="addon-butler" data-price="200" onchange="app.updateBookingSummary()">
+                                            <div class="addon-info">
+                                                <span class="addon-title"><i class="fa-solid fa-shirt"></i> Mayordomo Privado VIP</span>
+                                                <span class="addon-detail">Servicio de mayordomo las 24 hrs exclusivo para su suite ($200 por noche).</span>
+                                            </div>
+                                        </label>
+                                    </div>
+
+                                    <div class="addon-card">
+                                        <label class="addon-label">
+                                            <input type="checkbox" id="addon-allinc" data-price="150" onchange="app.updateBookingSummary()">
+                                            <div class="addon-info">
+                                                <span class="addon-title"><i class="fa-solid fa-utensils"></i> Todo Incluido Gastronómico</span>
+                                                <span class="addon-detail">Acceso libre a todos los bares y restaurantes (excepto Michelin) ($150 por día/persona).</span>
+                                            </div>
+                                        </label>
+                                    </div>
+
+                                    <div class="addon-card">
+                                        <label class="addon-label">
+                                            <input type="checkbox" id="addon-spa" data-price="120" onchange="app.updateBookingSummary()">
+                                            <div class="addon-info">
+                                                <span class="addon-title"><i class="fa-solid fa-spa"></i> Pase Diario VIP de Spa</span>
+                                                <span class="addon-detail">Acceso completo ilimitado al circuito hidrotermal y tratamientos básicos ($120 total).</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-btn-group">
+                                    <button type="button" class="btn btn-outline col-4" onclick="app.goToStep(1)"><i class="fa-solid fa-arrow-left"></i> Atrás</button>
+                                    <button type="button" class="btn btn-gold col-8" onclick="app.goToStep(3)">Datos de Contacto <i class="fa-solid fa-arrow-right"></i></button>
+                                </div>
+                            </div>
+
+                            <div class="form-step" id="step-3">
+                                <div class="step-indicator">Paso 3 de 3: Confirmación de Datos</div>
+
+                                <div class="form-group">
+                                    <label for="guest-fullname">Nombre Completo</label>
+                                    <input type="text" id="guest-fullname" placeholder="Ej. Juan Pérez" required>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-6">
+                                        <label for="guest-email">Correo Electrónico</label>
+                                        <input type="email" id="guest-email" placeholder="juan@ejemplo.com" required>
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <label for="guest-phone">Teléfono Móvil</label>
+                                        <input type="tel" id="guest-phone" placeholder="+52 55 1234 5678" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="guest-requests">Solicitudes Especiales (Opcional)</label>
+                                    <textarea id="guest-requests" rows="3" placeholder="Restricciones alimentarias, alergias, sorpresas de aniversario, etc..."></textarea>
+                                </div>
+
+                                <div class="payment-mock-notice">
+                                    <i class="fa-solid fa-lock"></i> Pago Seguro: No se le cobrará nada en este momento. Pagará directamente en el hotel al realizar el Check-in.
+                                </div>
+
+                                <div class="form-btn-group">
+                                    <button type="button" class="btn btn-outline col-4" onclick="app.goToStep(2)"><i class="fa-solid fa-arrow-left"></i> Atrás</button>
+                                    <button type="submit" class="btn btn-gold col-8">Confirmar Reservación <i class="fa-solid fa-check"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Booking Summary Invoice -->
+                    <div class="booking-summary-card card-glass">
+                        <h3>Detalle del Presupuesto</h3>
+                        <div class="summary-divider"></div>
+                        
+                        <div class="summary-empty" id="summary-empty-msg">
+                            <i class="fa-solid fa-file-invoice-dollar"></i>
+                            <p>Complete las fechas y habitación para ver el desglose en tiempo real.</p>
+                        </div>
+
+                        <div class="summary-details d-none" id="summary-details-list">
+                            <div class="summary-item">
+                                <span class="summary-label" id="summary-room-name">Habitación</span>
+                                <span class="summary-value" id="summary-room-cost">$0</span>
+                            </div>
+                            <div class="summary-item sub-item">
+                                <span class="summary-label">Duración</span>
+                                <span class="summary-value" id="summary-duration">0 noches</span>
+                            </div>
+                            <div class="summary-item sub-item">
+                                <span class="summary-label">Huéspedes</span>
+                                <span class="summary-value" id="summary-guests-count">0 personas</span>
+                            </div>
+                            
+                            <div class="summary-divider"></div>
+                            
+                            <div class="summary-addons-section" id="summary-addons-container">
+                                <h4>Servicios Adicionales</h4>
+                                <div id="summary-addons-list">
+                                    <!-- Dynamic addons -->
+                                </div>
+                                <div class="summary-divider"></div>
+                            </div>
+                            
+                            <div class="summary-total-group">
+                                <div class="summary-item">
+                                    <span class="total-label">Subtotal</span>
+                                    <span class="total-value" id="summary-subtotal">$0</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="total-label">Impuestos (16%)</span>
+                                    <span class="total-value" id="summary-taxes">$0</span>
+                                </div>
+                                <div class="summary-item total-final">
+                                    <span class="total-label">TOTAL ESTIMADO</span>
+                                    <span class="total-value" id="summary-grandtotal">$0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- VIEW: CONTACT -->
+        <section id="contact-view" class="view">
+            <div class="section-container container">
+                <div class="section-header">
+                    <span class="section-subtitle">ATENCIÓN AL HUÉSPED</span>
+                    <h2 class="section-title">Contáctenos o Visite Nuestro Edificio</h2>
+                    <div class="accent-line"></div>
+                </div>
+
+                <div class="contact-layout">
+                    <!-- Left: Contact Details -->
+                    <div class="contact-info-panel">
+                        <div class="info-card">
+                            <div class="info-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                            <div class="info-text">
+                                <h4>Ubicación Privilegiada</h4>
+                                <p>Paseo Marítimo de Gupi, K.M. 8.5, Península de la Bahía de Gupi, Z.C. 99800</p>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon"><i class="fa-solid fa-phone-volume"></i></div>
+                            <div class="info-text">
+                                <h4>Línea Telefónica Directa</h4>
+                                <p>+52 (998) 450-GUPIS (General)</p>
+                                <p>+52 (998) 450-8800 (Reservas VIP)</p>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+                            <div class="info-text">
+                                <h4>Correos de Soporte</h4>
+                                <p>concierge@gupipalace.com</p>
+                                <p>events@gupipalace.com</p>
+                            </div>
+                        </div>
+
+                        <!-- Mock map using CSS design -->
+                        <div class="mock-map-container">
+                            <div class="mock-map">
+                                <div class="map-bg"></div>
+                                <div class="map-marker">
+                                    <div class="pulse-ring"></div>
+                                    <i class="fa-solid fa-hotel"></i>
+                                </div>
+                                <span class="map-label">Gupi Palace Resort</span>
+                            </div>
+                        </div>
+
+                        <!-- Geolocation Card -->
+                        <div class="info-card geolocation-card" id="geo-card" style="align-items: flex-start;">
+                            <div class="info-icon"><i class="fa-solid fa-location-crosshairs"></i></div>
+                            <div class="info-text" style="width: 100%;">
+                                <h4>Localizar Distancia al Resort</h4>
+                                <p id="geo-status">Descubre la distancia desde tu ubicación actual hasta nuestro resort.</p>
+                                <div id="geo-data" class="d-none" style="margin-top: 10px; font-size: 0.82rem; border-top: 1px solid var(--border-glass); padding-top: 10px;">
+                                    <p><strong>Tus Coordenadas:</strong> <span id="geo-coords">-</span></p>
+                                    <p><strong>Lugar Detectado:</strong> <span id="geo-location-name">Obteniendo dirección...</span></p>
+                                    <p id="geo-distance" class="text-gold" style="font-weight: 600; margin-top: 6px; font-size: 0.88rem;"></p>
+                                </div>
+                                <button type="button" class="btn btn-gold btn-sm" id="btn-geolocation" onclick="app.getUserLocation()" style="margin-top: 12px; width: 100%;">
+                                    <i class="fa-solid fa-compass"></i> Calcular Distancia
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Form -->
+                    <div class="contact-form-panel card-glass">
+                        <h3>Envíenos un mensaje</h3>
+                        <p class="form-desc">Si tiene alguna duda sobre nuestras instalaciones, eventos privados o traslados, escríbanos. Nuestro Concierge le responderá en menos de 2 horas.</p>
+                        
+                        <form id="hotel-contact-form" onsubmit="app.handleContactSubmit(event)">
+                            <div class="form-group">
+                                <label for="contact-name">Nombre Completo</label>
+                                <input type="text" id="contact-name" placeholder="Ej. Ana María Gómez" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-email">Correo Electrónico</label>
+                                <input type="email" id="contact-email" placeholder="ana@ejemplo.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-subject">Asunto</label>
+                                <select id="contact-subject" required>
+                                    <option value="" disabled selected>Seleccione una opción...</option>
+                                    <option value="info">Información General</option>
+                                    <option value="events">Eventos Privados & Bodas</option>
+                                    <option value="press">Prensa & Marketing</option>
+                                    <option value="complaint">Comentarios o Quejas</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-message">Mensaje</label>
+                                <textarea id="contact-message" rows="5" placeholder="Escriba aquí su mensaje en detalle..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-gold btn-block">Enviar Mensaje <i class="fa-solid fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIEW: ENTERTAINMENT -->
+        <section id="entertainment-view" class="view">
+            <div class="section-container container" style="padding-top: 120px; padding-bottom: 80px;">
+                <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+                    <span class="section-subtitle">CINE PRIVADO EN SU SUITE</span>
+                    <h2 class="section-title">Entretenimiento Premium</h2>
+                    <div class="accent-line"></div>
+                </div>
+
+                <!-- Search and Filters -->
+                <div class="entertainment-search-bar">
+                    <input type="text" id="movie-search-input" placeholder="Buscar películas por título..." onkeypress="if(event.key === 'Enter') app.handleMovieSearch()">
+                    <button class="btn btn-gold" onclick="app.handleMovieSearch()"><i class="fa-solid fa-magnifying-glass"></i> Buscar</button>
+                </div>
+
+                <div class="filter-controls" style="margin-bottom: 30px;">
+                    <button class="filter-btn active" id="movie-filter-popular" onclick="app.filterMoviesCategory('popular', this)">Populares</button>
+                    <button class="filter-btn" id="movie-filter-now_playing" onclick="app.filterMoviesCategory('now_playing', this)">En Cartelera</button>
+                    <button class="filter-btn" id="movie-filter-top_rated" onclick="app.filterMoviesCategory('top_rated', this)">Mejor Valoradas</button>
+                    <button class="filter-btn" id="movie-filter-upcoming" onclick="app.filterMoviesCategory('upcoming', this)">Próximamente</button>
+                </div>
+
+                <!-- Movies Grid -->
+                <div class="grid-movies" id="movies-grid">
+                    <!-- Dynamic movie cards will be injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- VIEW: ADMIN DASHBOARD (CRUD) -->
+        <section id="admin-view" class="view">
+            <div class="section-container container" style="padding-top: 120px; padding-bottom: 80px;">
+                <div class="section-header" style="text-align: left; margin-bottom: 40px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;">
+                    <div>
+                        <span class="section-subtitle">PANEL DE CONTROL</span>
+                        <h2 class="section-title">Gestión de Reservaciones</h2>
+                        <div class="accent-line" style="margin: 15px 0 0 0;"></div>
+                    </div>
+                    <button class="btn btn-gold" onclick="app.openCreateBookingModal()"><i class="fa-solid fa-plus"></i> Nueva Reserva</button>
+                </div>
+
+                <!-- Stats Dashboard -->
+                <div class="admin-stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-label">Total Reservas</span>
+                            <span class="stat-value" id="stat-total-bookings">0</span>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-success">
+                        <div class="stat-icon"><i class="fa-solid fa-circle-check"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-label">Confirmadas</span>
+                            <span class="stat-value" id="stat-confirmed-bookings">0</span>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-warning">
+                        <div class="stat-icon"><i class="fa-solid fa-spinner"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-label">Pendientes</span>
+                            <span class="stat-value" id="stat-pending-bookings">0</span>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-gold">
+                        <div class="stat-icon"><i class="fa-solid fa-wallet"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-label">Ingresos Totales</span>
+                            <span class="stat-value" id="stat-total-revenue">$0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filter & Search Controls -->
+                <div class="admin-controls-bar">
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="admin-search-input" placeholder="Buscar por huésped o código..." oninput="app.filterAdminBookings()">
+                    </div>
+                    <div class="filter-controls">
+                        <select id="admin-filter-room" onchange="app.filterAdminBookings()">
+                            <option value="">Todas las Habitaciones</option>
+                            <option value="penthouse">Grand Penthouse Imperial</option>
+                            <option value="ocean-deluxe">Grand Deluxe Vista al Océano</option>
+                            <option value="underwater">Suite Submarina Poseidón</option>
+                            <option value="garden-villa">Villa Jardín & Oasis Privado</option>
+                        </select>
+                        <select id="admin-filter-status" onchange="app.filterAdminBookings()">
+                            <option value="">Todos los Estados</option>
+                            <option value="Confirmada">Confirmadas</option>
+                            <option value="Pendiente">Pendientes</option>
+                            <option value="Cancelada">Canceladas</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Bookings Table Container -->
+                <div class="admin-table-container">
+                    <table class="admin-table" id="admin-bookings-table">
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Huésped</th>
+                                <th>Habitación</th>
+                                <th>Llegada / Salida</th>
+                                <th>Noches</th>
+                                <th>Total</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-bookings-tbody">
+                            <tr>
+                                <td colspan="8" style="text-align:center; padding: 40px; color: var(--color-text-muted);">
+                                    <i class="fa-solid fa-spinner fa-spin" style="font-size:1.5rem; margin-bottom:10px; display:block;"></i> Cargando reservaciones...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Room Details Modal -->
+    <div class="modal-backdrop" id="room-detail-modal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="app.closeModal()">&times;</button>
+            <div class="modal-body" id="modal-body-content">
+                <!-- Content will be injected dynamically by app.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Confirmation Receipt Modal -->
+    <div class="modal-backdrop" id="booking-receipt-modal">
+        <div class="modal-card receipt-card">
+            <div class="receipt-header">
+                <i class="fa-solid fa-circle-check success-icon"></i>
+                <h2>¡Reservación Confirmada!</h2>
+                <p>Su estadía de ensueño ha sido registrada con éxito.</p>
+            </div>
+            
+            <div class="receipt-body">
+                <div class="receipt-line">
+                    <span class="label">Código de Reserva:</span>
+                    <span class="value code" id="receipt-code">GP-8927A1</span>
+                </div>
+                <div class="receipt-line">
+                    <span class="label">Huésped:</span>
+                    <span class="value" id="receipt-guest-name">-</span>
+                </div>
+                <div class="receipt-line">
+                    <span class="label">Habitación:</span>
+                    <span class="value" id="receipt-room-name">-</span>
+                </div>
+                <div class="receipt-line">
+                    <span class="label">Fechas:</span>
+                    <span class="value" id="receipt-dates">-</span>
+                </div>
+                <div class="receipt-line">
+                    <span class="label">Noches:</span>
+                    <span class="value" id="receipt-nights">-</span>
+                </div>
+                <div class="receipt-line">
+                    <span class="label">Adicionales:</span>
+                    <span class="value" id="receipt-addons">-</span>
+                </div>
+                <div class="receipt-divider"></div>
+                <div class="receipt-line receipt-total">
+                    <span class="label">Total a Pagar en Hotel:</span>
+                    <span class="value" id="receipt-total-value">$0.00</span>
+                </div>
+            </div>
+
+            <p class="receipt-footer-msg">Hemos enviado el cupón digital y las instrucciones de llegada a su correo electrónico. ¡Esperamos verle pronto!</p>
+            
+            <button class="btn btn-gold btn-block" onclick="app.closeReceiptModal()">Entendido</button>
+        </div>
+    </div>
+
+    <!-- Admin Edit/Create Booking Modal -->
+    <div class="modal-backdrop" id="admin-booking-modal">
+        <div class="modal-card admin-form-card">
+            <button class="modal-close" onclick="app.closeAdminModal()">&times;</button>
+            <div class="modal-header">
+                <h2 id="admin-modal-title">Editar Reservación</h2>
+                <p id="admin-modal-subtitle">Modifique los datos de la estancia del huésped.</p>
+            </div>
+            
+            <form id="admin-booking-form" onsubmit="app.handleAdminBookingSubmit(event)">
+                <input type="hidden" id="admin-form-booking-code">
+                <input type="hidden" id="admin-form-mode" value="edit"> <!-- edit or create -->
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="admin-form-guest-name">Nombre del Huésped</label>
+                        <input type="text" id="admin-form-guest-name" required placeholder="Nombre completo">
+                    </div>
+                    <div class="form-group">
+                        <label for="admin-form-guest-email">Correo Electrónico</label>
+                        <input type="email" id="admin-form-guest-email" required placeholder="correo@ejemplo.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="admin-form-guest-phone">Teléfono de Contacto</label>
+                        <input type="tel" id="admin-form-guest-phone" required placeholder="Número telefónico">
+                    </div>
+                    <div class="form-group">
+                        <label for="admin-form-room">Habitación</label>
+                        <select id="admin-form-room" required onchange="app.updateAdminFormPrice()">
+                            <option value="penthouse">Grand Penthouse Imperial ($1,200/noche)</option>
+                            <option value="ocean-deluxe">Grand Deluxe Vista al Océano ($450/noche)</option>
+                            <option value="underwater">Suite Submarina Poseidón ($2,500/noche)</option>
+                            <option value="garden-villa">Villa Jardín & Oasis Privado ($350/noche)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="admin-form-checkin">Fecha de Llegada</label>
+                        <input type="date" id="admin-form-checkin" required onchange="app.updateAdminFormPrice()">
+                    </div>
+                    <div class="form-group">
+                        <label for="admin-form-checkout">Fecha de Salida</label>
+                        <input type="date" id="admin-form-checkout" required onchange="app.updateAdminFormPrice()">
+                    </div>
+                    <div class="form-group">
+                        <label for="admin-form-adults">Adultos</label>
+                        <select id="admin-form-adults" onchange="app.updateAdminFormPrice()">
+                            <option value="1">1 Adulto</option>
+                            <option value="2" selected>2 Adultos</option>
+                            <option value="3">3 Adultos</option>
+                            <option value="4">4 Adultos</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="admin-form-kids">Niños</label>
+                        <select id="admin-form-kids" onchange="app.updateAdminFormPrice()">
+                            <option value="0" selected>0 Niños</option>
+                            <option value="1">1 Niño</option>
+                            <option value="2">2 Niños</option>
+                            <option value="3">3 Niños</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="addons-selection-title">Servicios Adicionales</div>
+                <div class="admin-addons-grid">
+                    <label class="admin-addon-card">
+                        <input type="checkbox" id="admin-addon-heliport" data-price="600" onchange="app.updateAdminFormPrice()">
+                        <div class="addon-card-content">
+                            <span class="addon-icon"><i class="fa-solid fa-helicopter"></i></span>
+                            <span class="addon-name">Helipuerto ($600)</span>
+                        </div>
+                    </label>
+                    <label class="admin-addon-card">
+                        <input type="checkbox" id="admin-addon-butler" data-price="200" onchange="app.updateAdminFormPrice()">
+                        <div class="addon-card-content">
+                            <span class="addon-icon"><i class="fa-solid fa-shirt"></i></span>
+                            <span class="addon-name">Mayordomo ($200/n)</span>
+                        </div>
+                    </label>
+                    <label class="admin-addon-card">
+                        <input type="checkbox" id="admin-addon-allinc" data-price="150" onchange="app.updateAdminFormPrice()">
+                        <div class="addon-card-content">
+                            <span class="addon-icon"><i class="fa-solid fa-utensils"></i></span>
+                            <span class="addon-name">Todo Incluido ($150/p/d)</span>
+                        </div>
+                    </label>
+                    <label class="admin-addon-card">
+                        <input type="checkbox" id="admin-addon-spa" data-price="120" onchange="app.updateAdminFormPrice()">
+                        <div class="addon-card-content">
+                            <span class="addon-icon"><i class="fa-solid fa-spa"></i></span>
+                            <span class="addon-name">Spa VIP ($120)</span>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="form-group" style="margin-top:20px;">
+                    <label for="admin-form-requests">Peticiones Especiales</label>
+                    <textarea id="admin-form-requests" rows="3" placeholder="Restricciones alimenticias, check-in temprano, etc."></textarea>
+                </div>
+
+                <div class="form-grid" style="margin-top: 20px; align-items: center;">
+                    <div class="form-group">
+                        <label for="admin-form-status">Estado de la Reserva</label>
+                        <select id="admin-form-status" required class="status-select" style="background: var(--bg-tertiary); color: white; border: 1px solid var(--border-glass); padding: 8px; border-radius: var(--border-radius-sm);">
+                            <option value="Pendiente">Pendiente</option>
+                            <option value="Confirmada">Confirmada</option>
+                            <option value="Cancelada">Cancelada</option>
+                        </select>
+                    </div>
+                    <div class="admin-form-price-summary" style="font-size:1.1rem; text-align:right; font-weight:600;">
+                        Total Estimado: <span id="admin-form-total-value" class="text-gold">$0</span>
+                    </div>
+                </div>
+
+                <div class="admin-modal-actions" style="display:flex; justify-content:flex-end; gap:15px; margin-top:30px; border-top:1px solid var(--border-glass); padding-top:20px;">
+                    <button type="button" class="btn btn-outline" onclick="app.closeAdminModal()">Cancelar</button>
+                    <button type="submit" class="btn btn-gold" id="admin-form-submit-btn"><i class="fa-solid fa-save"></i> Guardar Cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Confirm Delete Modal -->
+    <div class="modal-backdrop" id="admin-delete-modal">
+        <div class="modal-card delete-confirm-card" style="max-width: 450px; text-align: center; padding: 40px;">
+            <div class="delete-icon" style="font-size: 3.5rem; color: var(--color-error); margin-bottom: 20px;">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <h2>¿Eliminar Reservación?</h2>
+            <p style="color: var(--color-text-secondary); margin: 15px 0 30px 0; font-size: 0.95rem;">
+                Esta acción no se puede deshacer. Se eliminará la reservación <strong id="delete-booking-code-label" class="text-gold"></strong> de forma permanente de la base de datos.
+            </p>
+            <input type="hidden" id="delete-booking-code">
+            <div class="admin-modal-actions" style="display:flex; justify-content: center; gap: 15px;">
+                <button class="btn btn-outline" onclick="app.closeDeleteModal()">Cancelar</button>
+                <button class="btn" style="background-color: var(--color-error); color: white;" onclick="app.confirmDeleteBooking()"><i class="fa-solid fa-trash"></i> Eliminar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PayPal Loading / Processing Modal -->
+    <div class="modal-backdrop" id="paypal-loading-modal">
+        <div class="modal-card paypal-loading-card" style="max-width: 420px; text-align: center; padding: 40px;">
+            <div class="paypal-spinner-container" style="margin-bottom: 25px; position: relative; display: inline-flex; align-items: center; justify-content: center; width: 80px; height: 80px; margin: 0 auto 20px auto;">
+                <div class="paypal-logo-spin" style="z-index: 2; position: relative;">
+                    <i class="fa-brands fa-paypal" style="font-size: 3.2rem; color: #0079C1; filter: drop-shadow(0 0 8px rgba(0,121,193,0.3));"></i>
+                </div>
+                <div class="spinner-gold-ring"></div>
+            </div>
+            <h2 style="font-family: var(--font-title); font-size: 1.5rem; color:#fff; font-weight:600;">Procesando Pago con PayPal</h2>
+            <p style="color: var(--color-text-secondary); margin: 15px 0 0 0; font-size: 0.92rem; line-height: 1.5;">
+                Por favor, no cierres ni actualices esta página. Estamos validando la transacción en el servidor y confirmando tu reservación...
+            </p>
+        </div>
+    </div>
+
+    <!-- Movie Cast Simulation Modal -->
+    <div class="modal-backdrop" id="movie-cast-modal">
+        <div class="modal-card cast-modal-card">
+            <button class="modal-close" onclick="app.closeCastModal()">&times;</button>
+            <div class="cast-icon-container">
+                <div class="cast-pulse"></div>
+                <div class="cast-spinner-ring"></div>
+                <i class="fa-solid fa-tv"></i>
+            </div>
+            <h2 style="font-family: var(--font-title); font-size: 1.6rem; color: #fff; font-weight: 600; margin-bottom: 15px;">Transmitiendo a la Suite</h2>
+            <p style="color: var(--color-text-secondary); margin-bottom: 25px; font-size: 0.95rem; line-height: 1.6;">
+                🍿 Preparando la función...<br>
+                La película <strong id="cast-movie-title" class="text-gold"></strong> se está transmitiendo a la Smart TV de tu Suite en resolución 4K HDR. ¡Que disfrute de su función!
+            </p>
+            <button class="btn btn-gold btn-block" onclick="app.closeCastModal()">Disfrutar de la Función</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-col col-brand">
+                <a href="#home" class="logo"><span class="logo-accent">GUPI</span> PALACE</a>
+                <p class="footer-desc">El resort residencial y hotelero más lujoso del mundo. Una maravilla arquitectónica que combina comodidad, privacidad y servicio de clase mundial.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="#home" onclick="app.switchView('home')">Inicio</a></li>
+                    <li><a href="#rooms" onclick="app.switchView('rooms')">Habitaciones</a></li>
+                    <li><a href="#amenities" onclick="app.switchView('amenities')">Servicios y Spa</a></li>
+                    <li><a href="#booking" onclick="app.switchView('booking')">Motor de Reservas</a></li>
+                    <li><a href="#contact" onclick="app.switchView('contact')">Contacto & Mapa</a></li>
+                    <li><a href="#entertainment" onclick="app.switchView('entertainment')">Entretenimiento</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Políticas y Soporte</h4>
+                <ul>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Políticas de Cancelación</a></li>
+                    <li><a href="#">Reglas de la Casa</a></li>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col col-newsletter">
+                <h4>Suscríbase al boletín</h4>
+                <p>Reciba ofertas exclusivas, invitaciones a eventos privados y novedades sobre Gupi Palace.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('¡Gracias por suscribirse a nuestro boletín exclusivo!'); this.reset();">
+                    <input type="email" placeholder="Su correo electrónico" required>
+                    <button type="submit" class="btn btn-gold"><i class="fa-solid fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Gupi Palace & Resort. Todos los derechos reservados. Diseñado bajo estándares de ultra-lujo.</p>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript Code -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>
