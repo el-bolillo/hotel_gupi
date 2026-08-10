@@ -391,7 +391,7 @@ app.post('/api/paypal/capture-order', async (req, res) => {
 });
 
 // Servir el frontend para cualquier otra ruta no controlada por la API
-app.get('*', (req, res) => {
+app.use((req, res) => {
     res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
