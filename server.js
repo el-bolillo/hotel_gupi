@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const db = require('./db');
+const path = require('path');
+
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -151,6 +153,8 @@ function capturePayPalOrder(token, orderId) {
 // Middlewares
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'dist')));
+
 
 // Helper para enviar notificación de Telegram desde el backend
 async function sendTelegramNotification(booking, chatId) {
@@ -384,6 +388,11 @@ app.post('/api/paypal/capture-order', async (req, res) => {
         console.error('Error al capturar orden de PayPal:', error);
         res.status(500).json({ error: 'Error al capturar el pago: ' + error.message });
     }
+});
+
+// Servir el frontend para cualquier otra ruta no controlada por la API
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 // Iniciar servidor
